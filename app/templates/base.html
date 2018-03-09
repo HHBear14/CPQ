@@ -2,23 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    {% if title %}
-        <title>Title1234 {{title.username15}}--!</title>
-    {% else %}
-        <title>Welcome!</title>
-    {% endif %}
+    {%if title%}
+       <title>Title1234 {{title.username15}}-!</title>
+       {%else%}
+       <title>Welcome!</title>
+       {%endif%}
 </head>
 <body>
-    <a href="/store">Store</a>
-    <a href="/">Main</a>
-    <a href="/login">Login</a>
+    <div><a href="/plans">plans</a></div>
+    <div><a href="/">Main</a></div>
+    {% if current_user.is_anonymous %}
+        <a href="{{ url_for('login') }}">Login</a>
+        {% else %}
+        <a href="{{ url_for('logout') }}">Logout</a>
+        <div>Hello, {{current_user.username}}!</div>
+        {% endif %}
     <hr>
     <div>
         {% with messages = get_flashed_messages() %}
-            (% if messages %}
+            {% if messages %}
             <ul>
                 {% for message in messages %}
-                <li>{{message}}</li>
+                <li>{{ message }}</li>
                 {% endfor %}
             </ul>
             {% endif %}
