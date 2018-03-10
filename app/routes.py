@@ -51,7 +51,7 @@ def login():
             return redirect(url_for('login'))
 
         login_user(user, remember=form.remember_me.data)
-        return redirect(url_for('index'))
+        return redirect(url_for('Index'))
 
     return render_template('login.html', title='Sign In', form=form)  # GET or submit validate Flaid
 
