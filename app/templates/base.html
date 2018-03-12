@@ -15,7 +15,7 @@
         <a href="{{ url_for('login') }}">Login</a>
         {% else %}
         <a href="{{ url_for('logout') }}">Logout</a>
-        <div>Hello, {{current_user.username}}!</div>
+        <div>Welcome to, {{current_user.username}}!</div>
         {% endif %}
     <hr>
     <div>
@@ -28,6 +28,11 @@
             </ul>
             {% endif %}
         {% endwith %}
+    </div>
+    <div id="footer">
+      {% block footer %}
+        <footer><p>©<script>document.write(new Date().getFullYear())</script></p></footer>
+      {% endblock %}
     </div>
     {% block content %}{% endblock %}
 </body>

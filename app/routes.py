@@ -1,45 +1,49 @@
 from app import app2 as app
 from flask import render_template, flash, redirect, url_for
 from app.forms import LoginForm, RegistrationForm
-from app.models import Post, User, db
+from app.models import Post123, User, db, plans20
 from flask_login import current_user, login_user, logout_user
 
 
 @app.route('/')
 @app.route('/index')
 def Index():
-    user2 = {'username4': 'moto'}
+    user2 = {'username4': 'Club CPQ'}
 
-    a3title = {'username15': 'Dov'}
+    a3title = {'username15': 'CPQ'}
 
-    posts2 = Post.query.all()
+    return render_template('index.html', user1=user2, title=a3title)
 
-    return render_template('index.html', user1=user2, posts5=posts2, title=a3title)
+@app.route('/plans2')
+def Plans2():
+    user2 = {'username4': 'Club CPQ'}
+
+    a3title = {'username15': 'CPQ'}
+
+    posts3 = plans20.query.all()
+
+    return render_template('plans2.html', user1=user2, posts6=posts3, title=a3title)
 
 
 @app.route('/plans')
 def store():
-    items6 = [
-        {
-            'title': "Python book",
-            'price': "200"
-        },
-        {
-            'title': "Cook book",
-            'price': 2
-        },
-        {
-            'title': "iphone X",
-            'price': 1000
-        }
-    ]
-    return render_template('plans.html', items5=items6)
+    if current_user.is_authenticated:
+        return redirect(url_for('Plans2'))
+
+    else:
+        user2 = {'username4': 'Club CPQ'}
+
+        a3title = {'username15': 'CPQ'}
+
+        posts2 = Post123.query.all()
+
+        return render_template('plans.html', user1=user2, posts5=posts2, title=a3title)
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('Index'))
     form = LoginForm()
     if form.validate_on_submit():  # post and submit validate
 
@@ -59,13 +63,13 @@ def login():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('Index'))
 
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('Index'))
     form = RegistrationForm()
     if form.validate_on_submit():
         user = User(username=form.username.data, email=form.email.data)

@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-    <h1>Plans!</h1>
-       {% for item in items5 %}
-       <div><H1>{{ item.title }}</H1>{{ item.price }}</div>
+    <h1>Hello {{user1.username4}}!</h1>
+       {% for post in posts5 %}
+    <div><H1>{{ post.title }}</H1>
+    <h2>{{ post.subtitle }}</h2>
+    {{ post.body }}</div>
        {% endfor %}
 {% endblock %}

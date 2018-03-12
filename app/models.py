@@ -25,7 +25,7 @@ def load_user(id):
     return User.query.get(int(id))
 
 
-class Post(db.Model):
+class Post123(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(20))
     subtitle = db.Column(db.String(40))
@@ -33,7 +33,17 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return '<Post {}>'.format(self.body)
+        return '<Post123 {}>'.format(self.body)
+class plans20(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(20))
+    subtitle = db.Column(db.String(40))
+    body = db.Column(db.String(280))
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    def __repr__(self):
+       return '<plans20 {}>'.format(self.body)
+
 
 
 
