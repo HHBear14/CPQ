@@ -2,7 +2,7 @@
 {% block content %}
     <h1>Hello {{user1.username4}}!</h1>
        {% for plans20 in posts6 %}
-    <div><H1>{{ plans20.title }}</H1>
+    <div><H1><a href="/details">{{ plans20.title }}</a></H1>
     <h2>{{ plans20.subtitle }}</h2>
     {{ plans20.body }}</div>
        {% endfor %}

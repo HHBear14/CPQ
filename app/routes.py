@@ -81,3 +81,10 @@ def register():
         flash('Congratulations, you are now a registered user!')
         return redirect(url_for('login'))
     return render_template('register.html', title='Register', form=form)
+
+@app.route('/details')
+def details():
+    user2 = {'username4': 'Club CPQ'}
+
+    a3title = {'username15': 'CPQ'}
+    return render_template('details.html', user1=user2, title=a3title)
