@@ -1,9 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Hello {{user1.username4}}!</h1>
-       {% for plans20 in posts6 %}
-    <div><H1><a href="/details">{{ plans20.title }}</a></H1>
-    <h2>{{ plans20.subtitle }}</h2>
-    {{ plans20.body }}</div>
+       {% for plans1 in posts61 %}
+    <div><H1><a href="/details">{{ plans1.title }}</a></H1>
+    <h2>{{ plans1.subtitle }}</h2>
+        <h3>{{ plans1.body }}</h3></div>
+       {% endfor %}
+       {% for plans2 in posts62 %}
+    <div><H1><a href="/details2">{{ plans2.title }}</a></H1>
+    <h2>{{ plans2.subtitle }}</h2>
+        <h3>{{ plans2.body }}</h3></div>
+       {% endfor %}
+       {% for plans3 in posts63 %}
+    <div><H1><a href="/details3">{{ plans3.title }}</a></H1>
+    <h2>{{ plans3.subtitle }}</h2>
+        <h3>{{ plans3.body }}</h3></div>
+       {% endfor %}
+       {% for plans4 in posts64 %}
+    <div><H1><a href="/details4">{{ plans4.title }}</a></H1>
+    <h2>{{ plans4.subtitle }}</h2>
+        <h3>{{ plans4.body }}</h3></div>
+       {% endfor %}
+       {% for plans5 in posts65 %}
+    <div><H1><a href="/details5">{{ plans5.title }}</a></H1>
+    <h2>{{ plans5.subtitle }}</h2>
+        <h3>{{ plans5.body }}</h3></div>
+       {% endfor %}
+       {% for plans6 in posts66 %}
+    <div><H1><a href="/details6">{{ plans6.title }}</a></H1>
+    <h2>{{ plans6.subtitle }}</h2>
+        <h3>{{ plans6.body }}</h3></div>
        {% endfor %}
 {% endblock %}

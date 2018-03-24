@@ -1,9 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
     <h1>Hello {{user1.username4}}!</h1>
-       {% for post in posts5 %}
-    <div><H1>{{ post.title }}</H1>
-    <h2>{{ post.subtitle }}</h2>
-    {{ post.body }}</div>
+       {% for posts1 in posts51 %}
+<div><H1><a href="/details">{{ posts1.title }}</a></H1>
+    <h2>{{ posts1.subtitle }}</h2>
+    <h3>{{ posts1.body }}</h3></div>
+       {% endfor %}
+       {% for posts2 in posts52 %}
+<div><H1><a href="/details2">{{ posts2.title }}</a></H1>
+    <h2>{{ posts2.subtitle }}</h2>
+    <h3>{{ posts2.body }}</h3></div>
+       {% endfor %}
+       {% for posts3 in posts53 %}
+<div><H1><a href="/details3">{{ posts3.title }}</a></H1>
+    <h2>{{ posts3.subtitle }}</h2>
+    <h3>{{ posts3.body }}</h3></div>
+       {% endfor %}
+       {% for posts4 in posts54 %}
+<div><H1><a href="/details4">{{ posts4.title }}</a></H1>
+    <h2>{{ posts4.subtitle }}</h2>
+    <h3>{{ posts4.body }}</h3></div>
+       {% endfor %}
+       {% for posts5 in posts55 %}
+<div><H1><a href="/details5">{{ posts5.title }}</a></H1>
+    <h2>{{ posts5.subtitle }}</h2>
+    <h3>{{ posts5.body }}</h3></div>
+       {% endfor %}
+       {% for posts6 in posts56 %}
+<div><H1><a href="/details6">{{ posts6.title }}</a></H1>
+    <h2>{{ posts6.subtitle }}</h2>
+    <h3>{{ posts6.body }}</h3></div>
        {% endfor %}
 {% endblock %}
